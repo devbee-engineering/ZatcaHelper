@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <RootNamespace>Zatca_Standard_Invoice_Integration_Client</RootNamespace>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Newtonsoft.Json" Version="13.0.2-beta2" />
+      <PackageReference Include="System.Security.Cryptography.Xml" Version="7.0.0-rc.1.22426.10" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="StandardInvoiceXml.xml" />
+      <EmbeddedResource Include="StandardInvoiceTemplate.xml">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </EmbeddedResource>
+      <None Remove="Util\StandardInvoiceHashingTemplate.xsl" />
+      <EmbeddedResource Include="Util\StandardInvoiceHashingTemplate.xsl">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </EmbeddedResource>
+    </ItemGroup>
+
+</Project>

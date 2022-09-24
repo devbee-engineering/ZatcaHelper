@@ -1,0 +1,6 @@
+.DS_Store
+bin/
+obj/
+.vs/
+.idea/
+Zatca-Standard-Invoice-Integration-Client.sln.DotSettings.user
