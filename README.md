@@ -85,10 +85,11 @@ For parameters refer ->  https://github.com/fasilmarshooq/Zatca_Integration_Help
 - implement reporting api for simplified tax invoices
 
 
-## 🔗 Contact me
-[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](www.linkedin.com/in/fasilmarshooq)
 
+## 🔗 Contact
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/fasilmarshooq)
 
+Write to me at **fasil@dev-bee.com**
 
 ## License
 
