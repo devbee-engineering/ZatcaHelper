@@ -1,6 +1,6 @@
 namespace Zatca_Standard_Invoice_Integration_Client.Util;
 
-public static class Embeddedresourcehelper
+public static class EmbeddedResourceHelper
 {
     public static string? GetFileContent(this Type type,string fileName)
     {

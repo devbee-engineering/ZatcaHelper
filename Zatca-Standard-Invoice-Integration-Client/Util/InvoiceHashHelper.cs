@@ -3,6 +3,7 @@ using System.Security.Cryptography.Xml;
 using System.Text;
 using System.Xml;
 using System.Xml.Xsl;
+using Serilog;
 
 namespace Zatca_Standard_Invoice_Integration_Client.Util;
 
@@ -22,25 +23,25 @@ public static class InvoiceHashHelper
             }
             catch
             {
-                Console.WriteLine("Can not apply XSL file");
+                Log.Error("Can not apply XSL file");
                 return null;
             }
 
             if (string.IsNullOrEmpty(transformedXml))
             {
-                Console.WriteLine("Error In applying XSL file");
+                Log.Error("Error In applying XSL file");
                 return null;
             }
 
             var canonicalizedXml = CanonicalizeXml(transformedXml);
             var hashValue = GetSha256Hash(Encoding.UTF8.GetString(canonicalizedXml?.ToArray() ?? Array.Empty<byte>()));
             if (hashValue.Any()) return Convert.ToBase64String(hashValue);
-            Console.WriteLine("Hashing Error");
+            Log.Error("Hashing Error");
             return null;
         }
         catch (Exception ex)
         {
-            Console.WriteLine(ex.Message);
+            Log.Error(ex,ex.Message);
             return null;
         }
     }

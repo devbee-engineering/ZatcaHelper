@@ -12,4 +12,8 @@
       <ProjectReference Include="..\Zatca-Standard-Invoice-Integration-Client\Zatca-Standard-Invoice-Integration-Client.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <PackageReference Include="NUnit" Version="3.13.3" />
+    </ItemGroup>
+
 </Project>
