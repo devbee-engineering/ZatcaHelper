@@ -1,0 +1,4 @@
+global using NUnit.Framework;
+global using Zatca_Standard_Invoice_Integration_Client;
+global using Zatca_Standard_Invoice_Integration_Client.Model;
+global using Zatca_Standard_Invoice_Integration_Client.Contracts;
