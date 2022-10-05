@@ -17,6 +17,7 @@
         <PackageTags>Zatca, ZatcaHelper, ZatcaIntegration, Fatoora, Tax</PackageTags>
         <Company>Bee.ZatcaHelper</Company>
         <Product>Bee.ZatcaHelper</Product>
+        <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     </PropertyGroup>
 
     <ItemGroup>
