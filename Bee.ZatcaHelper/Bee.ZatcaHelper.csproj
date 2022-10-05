@@ -18,6 +18,7 @@
         <Company>Bee.ZatcaHelper</Company>
         <Product>Bee.ZatcaHelper</Product>
         <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
     </PropertyGroup>
 
     <ItemGroup>

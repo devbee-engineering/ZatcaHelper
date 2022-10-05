@@ -4,7 +4,8 @@
 This project helps in integertation of systems to Zatca systems.
 Currently tested using their sandbox APIs.
 
-
+## 🔗 NuGet Package
+[![Nuget](https://img.shields.io/nuget/dt/Bee.ZatcaHelper?color=Blue&label=Nuget&logo=Nuget&style=flat-square)](https://www.nuget.org/packages/Bee.ZatcaHelper/)
 
 
 ## Follow below shell commands to generate CSR 
