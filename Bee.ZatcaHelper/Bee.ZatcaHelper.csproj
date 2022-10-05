@@ -1,0 +1,39 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <RootNamespace>Bee.ZatcaHelper</RootNamespace>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <AssemblyName>Bee.ZatcaHelper</AssemblyName>
+        <PackageId>Bee.ZatcaHelper</PackageId>
+        <PackageVersion>1.0.1</PackageVersion>
+        <Authors>DevBee</Authors>
+        <Description>This nuget helps in integertation of systems to Zatca systems.</Description>
+        <Copyright>MIT</Copyright>
+        <PackageProjectUrl>https://github.com/fasilmarshooq/Bee.ZatcaHelper</PackageProjectUrl>
+        <PackageIconUrl>https://github.com/fasilmarshooq/Bee.RestStarter/blob/main/Bee.RestStarter/Logo/devbee.png.png</PackageIconUrl>
+        <RepositoryUrl>https://github.com/fasilmarshooq/Bee.ZatcaHelper</RepositoryUrl>
+        <PackageTags>Zatca, ZatcaHelper, ZatcaIntegration, Fatoora, Tax</PackageTags>
+        <Company>Bee.ZatcaHelper</Company>
+        <Product>Bee.ZatcaHelper</Product>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Newtonsoft.Json" Version="13.0.2-beta2" />
+      <PackageReference Include="Serilog" Version="2.12.0" />
+      <PackageReference Include="System.Security.Cryptography.Xml" Version="7.0.0-rc.1.22426.10" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="StandardInvoiceXml.xml" />
+      <EmbeddedResource Include="StandardInvoiceTemplate.xml">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </EmbeddedResource>
+      <None Remove="Util\StandardInvoiceHashingTemplate.xsl" />
+      <EmbeddedResource Include="Util\StandardInvoiceHashingTemplate.xsl">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </EmbeddedResource>
+    </ItemGroup>
+
+</Project>

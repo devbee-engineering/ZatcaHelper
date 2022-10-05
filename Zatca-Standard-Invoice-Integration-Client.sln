@@ -1,10 +1,10 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zatca-Standard-Invoice-Integration-Client", "Zatca-Standard-Invoice-Integration-Client\Zatca-Standard-Invoice-Integration-Client.csproj", "{DE9A3E6E-9E5E-41EF-ABCC-AB8D81BE323D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bee.ZatcaHelper", "Bee.ZatcaHelper\Bee.ZatcaHelper.csproj", "{DE9A3E6E-9E5E-41EF-ABCC-AB8D81BE323D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Integration-Client-ConsoleTest", "Integration-Client-ConsoleTest\Integration-Client-ConsoleTest.csproj", "{9DC352F7-577D-4180-97C5-36320D0794B4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bee.ZatcaHelper.IntegrationTests", "Bee.ZatcaHelper.IntegrationTests\Bee.ZatcaHelper.IntegrationTests.csproj", "{9DC352F7-577D-4180-97C5-36320D0794B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zatca-Standard-Invoice-Integeration-Client-UnitTests", "Zatca-Standard-Invoice-Integeration-Client-UnitTests\Zatca-Standard-Invoice-Integeration-Client-UnitTests.csproj", "{61240BFD-01B7-4EA0-B48F-206A658C1732}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bee.ZatcaHelper.UnitTests", "Bee.ZatcaHelper.UnitTests\Bee.ZatcaHelper.UnitTests.csproj", "{61240BFD-01B7-4EA0-B48F-206A658C1732}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
