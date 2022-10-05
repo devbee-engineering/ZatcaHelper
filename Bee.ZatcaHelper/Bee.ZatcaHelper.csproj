@@ -12,7 +12,7 @@
         <Description>This nuget helps in integertation of systems to Zatca systems.</Description>
         <Copyright>MIT</Copyright>
         <PackageProjectUrl>https://github.com/fasilmarshooq/Bee.ZatcaHelper</PackageProjectUrl>
-        <PackageIconUrl>https://github.com/fasilmarshooq/Bee.RestStarter/blob/main/Bee.RestStarter/Logo/devbee.png.png</PackageIconUrl>
+        <PackageIconUrl>../Logo/Devbee-Logo.png</PackageIconUrl>
         <RepositoryUrl>https://github.com/fasilmarshooq/Bee.ZatcaHelper</RepositoryUrl>
         <PackageTags>Zatca, ZatcaHelper, ZatcaIntegration, Fatoora, Tax</PackageTags>
         <Company>Bee.ZatcaHelper</Company>
