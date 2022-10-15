@@ -7,7 +7,7 @@
         <Nullable>enable</Nullable>
         <AssemblyName>Bee.ZatcaHelper</AssemblyName>
         <PackageId>Bee.ZatcaHelper</PackageId>
-        <PackageVersion>1.0.3</PackageVersion>
+        <Version>1.0.3</Version>
         <Authors>DevBee</Authors>
         <Description>This nuget helps in integertation of systems to Zatca systems.</Description>
         <Copyright>MIT</Copyright>
