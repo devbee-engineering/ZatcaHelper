@@ -1,8 +1,10 @@
+using System.Net;
 using System.Net.Http.Json;
 using System.Text;
 using System.Xml;
 using Bee.ZatcaHelper.Contracts;
 using Bee.ZatcaHelper.Util;
+using WebClient = Bee.ZatcaHelper.Util.WebClient;
 
 namespace Bee.ZatcaHelper;
 
@@ -19,14 +21,20 @@ public class StandardInvoiceClearanceApiClient
 
     public InvoiceClearanceResponse ClearInvoice(InvoiceClearanceRequest invoiceClearanceRequest)
     {
-        var customHeaders = new Dictionary<string, string> {{"Clearance-Status", "1"}};
+        var customHeaders = new Dictionary<string, string> {{"Clearance-Status", "1"},{"accept-language","en"}};
         var result = new WebClient(_baseUrl, customHeaders,
             invoiceClearanceRequest.BinaryToken, invoiceClearanceRequest.Secret).PostAsJsonAsync(
             _invoiceClearanceEndPoint, invoiceClearanceRequest.Body);
         var response = result.Result.Content.ReadFromJsonAsync<InvoiceClearanceResponse>().Result;
+
+        if (result.Result.StatusCode == HttpStatusCode.InternalServerError)
+        {
+            throw new Exception("Something went wrong  " + result.Result.Content);
+        }
+
+        if (response?.ClearanceStatus != "CLEARED") return response;
         response.Hash = ((dynamic) invoiceClearanceRequest.Body).invoiceHash;
         response.GeneratedQR = GetGeneratedQrCode(response);
-
         return response;
     }
 

@@ -22,6 +22,10 @@ public static class E2ETest
         var prodOnboard = GetProdCsid(GlobalVariables, csrResponse);
 
         ClearInvoice(GlobalVariables, prodOnboard);
+        
+        Console.WriteLine("-----------------------------------------------------------------------------------------");
+        Console.WriteLine("----------------------------------Test Run Completed-------------------------------------");
+        Console.WriteLine("-----------------------------------------------------------------------------------------");
     }
 
     private static void ClearInvoice(GlobalVariables globalVariables, ProdCsidOnboardingResponse prodOnboard)
