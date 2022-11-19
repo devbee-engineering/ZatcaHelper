@@ -90,6 +90,7 @@ public static partial class StandardInvoiceXmlGenerator
         xmlDoc.SetCurrencyNodeValue(TaxTotalSubTotalTaxableAmountXpath,standardInvoice.TaxTotal.TaxableAmount);
         xmlDoc.SetCurrencyNodeValue(TaxTotalSubTotalTaxAmountXpath,standardInvoice.TaxTotal.TaxAmount);
         xmlDoc.SetNodeValue(TaxTotalSubTotalTaxCategoryIdTaxAmountXpath,standardInvoice.TaxTotal.TaxCategory);
+        xmlDoc.SetNodeValue(TaxTotalSubTotalTaxPercentTaxAmountXpath,standardInvoice.TaxTotal.Percent);
     }
 
     private static void PopulateDiscountInfo(XmlDocument xmlDoc, StandardInvoice standardInvoice)

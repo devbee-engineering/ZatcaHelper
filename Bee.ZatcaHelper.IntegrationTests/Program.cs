@@ -3,3 +3,4 @@
 using Bee.ZatcaHelper.IntegrationTests;
 
 E2ETest.Run();
+StandardInvoiceZeroTaxE2ETest.Run();
