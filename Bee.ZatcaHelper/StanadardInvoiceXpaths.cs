@@ -164,4 +164,10 @@ public  static partial class StandardInvoiceXmlGenerator
 
     private const string LegalMonetaryTotalPayableAmountXpath =
         "/*[local-name() = 'Invoice']/*[local-name() = 'LegalMonetaryTotal']/*[local-name() = 'PayableAmount']";
+    
+    private const string InvoiceReferenceXpath =
+        "/*[local-name() = 'Invoice']/*[local-name() = 'BillingReference']/*[local-name() = 'InvoiceDocumentReference']/*[local-name() = 'ID']";
+    
+    private const string AdjustmentReasonXpath =
+        "/*[local-name() = 'Invoice']/*[local-name() = 'PaymentMeans']/*[local-name() = 'InstructionNote']";
 }

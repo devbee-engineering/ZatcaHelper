@@ -8,6 +8,57 @@ public static partial class StandardInvoiceXmlGenerator
 {
     private const string StandardInvoiceXmlFormat = "StandardInvoiceTemplate.xml";
     private static string? _currentHash;
+
+    public static object GenerateForDebitNote(StandardInvoiceAdjustment standardInvoiceAdjustment)
+    {
+        const string debitNoteXmlFormat = "DebitNote.xml";
+        return GenerateForAdjustment(standardInvoiceAdjustment, debitNoteXmlFormat);
+    }
+    
+    public static object GenerateForCreditNote(StandardInvoiceAdjustment standardInvoiceAdjustment)
+    {
+        const string debitNoteXmlFormat = "CreditNote.xml";
+        return GenerateForAdjustment(standardInvoiceAdjustment, debitNoteXmlFormat);
+    }
+
+    private static object GenerateForAdjustment(StandardInvoiceAdjustment standardInvoiceAdjustment,
+        string debitNoteXmlFormat)
+    {
+        var xmlDoc = new XmlDocument
+        {
+            PreserveWhitespace = true
+        };
+        var xmlString = typeof(StandardInvoiceXmlGenerator).GetFileContent(debitNoteXmlFormat);
+
+
+        var standardInvoice = (StandardInvoice) standardInvoiceAdjustment;
+        xmlDoc.LoadXml(xmlString);
+        PopulateInvoiceBasicInfo(xmlDoc, standardInvoice);
+        PopulateSupplierInfo(xmlDoc, standardInvoice);
+        PopulateCustomerInfo(xmlDoc, standardInvoice);
+        PopulateDiscountInfo(xmlDoc, standardInvoice);
+        PopulateTaxTotals(xmlDoc, standardInvoice);
+        PopulateInvoiceLineItems(xmlDoc, standardInvoice);
+        PopulateTotals(xmlDoc, standardInvoice);
+
+        xmlDoc.SetNodeValue(InvoiceReferenceXpath, standardInvoiceAdjustment.AdjsutmentInvoiceNumber);
+        xmlDoc.SetNodeValue(AdjustmentReasonXpath, standardInvoiceAdjustment.AdjustmentReason);
+
+        PopulateInvoiceHash(xmlDoc);
+
+
+        var xmlBytes = System.Text.Encoding.UTF8.GetBytes(xmlDoc.OuterXml);
+        var sample = xmlDoc.OuterXml;
+
+        var resultAPiCall = new
+        {
+            invoiceHash = _currentHash,
+            uuid = standardInvoice.UUID,
+            invoice = Convert.ToBase64String(xmlBytes)
+        };
+        return resultAPiCall;
+    }
+
     public  static object  Generate(StandardInvoice standardInvoice)
     {
         
@@ -15,7 +66,7 @@ public static partial class StandardInvoiceXmlGenerator
         {
             PreserveWhitespace = true
         };
-        var xmlString = typeof(Bee.ZatcaHelper.StandardInvoiceXmlGenerator).GetFileContent(StandardInvoiceXmlFormat);
+        var xmlString = typeof(StandardInvoiceXmlGenerator).GetFileContent(StandardInvoiceXmlFormat);
 
 
         xmlDoc.LoadXml(xmlString);

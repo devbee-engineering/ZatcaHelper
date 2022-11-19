@@ -2,5 +2,7 @@
 
 using Bee.ZatcaHelper.IntegrationTests;
 
-E2ETest.Run();
+StandardInvoice_E2ETest.Run();
 StandardInvoiceZeroTaxE2ETest.Run();
+DebitNote_E2ETest.Run();
+CreditNote_E2ETest.Run();

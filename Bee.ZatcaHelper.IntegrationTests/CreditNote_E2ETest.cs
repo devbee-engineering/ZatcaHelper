@@ -1,6 +1,6 @@
 namespace Bee.ZatcaHelper.IntegrationTests;
 
-public static class E2ETest
+public static class CreditNote_E2ETest
 {
     private static readonly GlobalVariables GlobalVariables = new GlobalVariables()
     {
@@ -30,8 +30,10 @@ public static class E2ETest
 
     private static void ClearInvoice(GlobalVariables globalVariables, ProdCsidOnboardingResponse prodOnboard)
     {
-        var invoice = new StandardInvoice()
+        var invoice = new StandardInvoiceAdjustment()
         {
+            AdjustmentReason = "test adjustment",
+            AdjsutmentInvoiceNumber = "11221222",
             Id = "100012",
             UUID = Guid.NewGuid().ToString(),
             ActualDeliveryDate = "2022-09-13",
@@ -109,14 +111,22 @@ public static class E2ETest
         };
 
 
-        var generatedClearanceRequest = StandardInvoiceXmlGenerator.Generate(invoice);
+        var generatedClearanceRequest = StandardInvoiceXmlGenerator.GenerateForCreditNote(invoice);
         Console.WriteLine("----------------------Standard Invoice Generation Request---------------------------------");
         Console.WriteLine(Newtonsoft.Json.JsonConvert.SerializeObject(generatedClearanceRequest));
         var clearanceResponse = new StandardInvoiceClearanceApiClient(globalVariables).ClearInvoice(
             new InvoiceClearanceRequest(generatedClearanceRequest, prodOnboard.BinarySecurityToken,
                 prodOnboard.Secret));
-        Console.WriteLine("----------------------Standard Invoice Clearance Request---------------------------------");
-        Console.WriteLine(Newtonsoft.Json.JsonConvert.SerializeObject(clearanceResponse));
+        if (clearanceResponse.ClearanceStatus == "NOT_CLEARED")
+        {
+            Console.WriteLine("----------------------Standard Invoice Clearance Request - Failure reason---------------------------------");
+            Console.WriteLine(clearanceResponse.validationResults);
+        }
+        else
+        {
+            Console.WriteLine("----------------------Standard Invoice Clearance Request---------------------------------");
+            Console.WriteLine(Newtonsoft.Json.JsonConvert.SerializeObject(clearanceResponse));
+        }
         Assert.IsNotNull(clearanceResponse);
         Assert.IsNotEmpty(clearanceResponse.GeneratedQR);
     }

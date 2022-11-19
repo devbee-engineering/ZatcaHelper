@@ -1,6 +1,6 @@
 namespace Bee.ZatcaHelper.IntegrationTests;
 
-public static class StandardInvoiceZeroTaxE2ETest
+public static class StandardInvoice_E2ETest
 {
     private static readonly GlobalVariables GlobalVariables = new GlobalVariables()
     {
@@ -84,9 +84,9 @@ public static class StandardInvoiceZeroTaxE2ETest
                 ItemName = "item",
                 LineExtensionAmount = new Money("SAR", 1000.00),
                 PriceAmount = new Money("SAR", 10.00),
-                RoundingAmount = new Money("SAR", 1000.00),
-                TaxAmount = new Money("SAR", 0.00),
-                TaxPercent = "0.00",
+                RoundingAmount = new Money("SAR", 1150.00),
+                TaxAmount = new Money("SAR", 150.00),
+                TaxPercent = "15.00",
                 TaxScheme = "VAT",
                 TaxSchemeId = "S"
             },
@@ -94,16 +94,16 @@ public static class StandardInvoiceZeroTaxE2ETest
             {
                 AllowanceTotalAmount = new Money("SAR", 0.00),
                 LineExtensionAmount = new Money("SAR", 1000.00),
-                PayableAmount = new Money("SAR", 1000.00),
+                PayableAmount = new Money("SAR", 1150.00),
                 PrepaidAmount = new Money("SAR", 0.00),
                 TaxExclusiveAmount = new Money("SAR", 1000.00),
-                TaxInclusiveAmount = new Money("SAR", 1000.00),
+                TaxInclusiveAmount = new Money("SAR", 1150.00),
             },
             TaxTotal = new TaxTotal()
             {
-                Percent = "0.00",
+                Percent = "15.00",
                 TaxableAmount = new Money("SAR", 1000.00),
-                TaxAmount = new Money("SAR", 0.00),
+                TaxAmount = new Money("SAR", 150.00),
                 TaxCategory = "SA"
             }
         };

@@ -35,11 +35,18 @@
 
     <ItemGroup>
       <None Remove="StandardInvoiceXml.xml" />
+      <EmbeddedResource Include="DebitNote.xml">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </EmbeddedResource>
       <EmbeddedResource Include="StandardInvoiceTemplate.xml">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </EmbeddedResource>
       <None Remove="Util\StandardInvoiceHashingTemplate.xsl" />
       <EmbeddedResource Include="Util\StandardInvoiceHashingTemplate.xsl">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </EmbeddedResource>
+      <None Remove="CreditNote.xml" />
+      <EmbeddedResource Include="CreditNote.xml">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </EmbeddedResource>
     </ItemGroup>
