@@ -32,7 +32,7 @@ openssl req -new -sha256 -key privatekey.pem -extensions v3_req -config cert.cnf
 #convert to base64
 echo -n `cat generatedCSR.csr` | openssl enc -base64 -a -A >> csr_Output.txt
 ```
-    
+> **_NOTE:_** Above script is bash/shell script, if you are running from windows cmd setup openssl and execute the commands or simply dowload the git bash (https://git-scm.com/download/win) which can help in execution  
 ## API Reference
 
 **Note:** Global variables is a dependecy for all the classes , its parameters are described below
