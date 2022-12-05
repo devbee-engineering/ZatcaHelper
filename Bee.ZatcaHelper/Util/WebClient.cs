@@ -1,3 +1,4 @@
+using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Net.Http.Json;
 using System.Text;
@@ -17,7 +18,7 @@ public class WebClient
             new MediaTypeWithQualityHeaderValue("application/json"));
         _client.DefaultRequestHeaders.Add("Accept-Version", "V2");
 
-        foreach (var (header, value) in customHeaders)
+        foreach (var (header, value) in customHeaders.Select( x => (x.Key, x.Value) ))
         {
             _client.DefaultRequestHeaders.Add(header, value);
         }
