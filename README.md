@@ -4,10 +4,10 @@
 This project helps in integertation of systems to Zatca systems.
 Currently tested using their sandbox APIs.
 
-B2C endpoints and support for multiple line items are available in our paid version
+> 🚀 Check [Pro feature list](https://github.com/devbee-engineering/ZatcaHelper/blob/main/pro-version-features.md)  for the Pro version, we already have more than 10 clients using our pro version.
 
 
-> **_NOTE:_** We have implemented similar solutions for many of our B2B clients in KSA, if you have similar requirements feel free to reach me at +91 - 9944144734
+> **_NOTE:_** We have implemented similar solutions for many of our B2B clients in KSA, if you have similar requirements feel free to reach me at +91 - 9003095635
 
 ## 🔗 Contact
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/fasilmarshooq)
